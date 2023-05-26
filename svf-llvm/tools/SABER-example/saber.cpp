@@ -90,7 +90,7 @@ int main(int argc, char ** argv)
     const SVFBugReport &report = saber->getBugReport();
     const SVFBugReport::BugSet &bugs = report.getBugSet();
     for (const GenericBug *bug: bugs){
-        SVFUtil::outs() << GenericBug::BugTypeName[bug->getBugType()] << " Found at " << bug->getFuncName() << ":" << bug->getLoc() << "\n";
+        SVFUtil::outs() << GenericBug::BugType2Str.at(bug->getBugType()) << " Found at " << bug->getFuncName() << ":" << bug->getLoc() << "\n";
     }
     SVFUtil::outs() << "Total Bugs: " << bugs.size() << "\n";
 
